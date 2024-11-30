@@ -3,29 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
+    <title>Marian Temprana Alonso - Personal Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background: radial-gradient(circle, #001f4d 30%, #000000 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            position: relative;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+
+        /* Network Effect */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('network-pattern.png') repeat;
+            opacity: 0.2;
+            z-index: 0;
         }
 
         /* Navigation Bar */
         nav {
-            background-color: #007acc;
+            background-color: #003366;
             padding: 1rem 2rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 1rem;
+            margin: 0 1.5rem;
             font-weight: bold;
+            font-size: 1.2rem;
         }
         nav a:hover {
             text-decoration: underline;
@@ -33,98 +53,277 @@
 
         /* Main Layout */
         .container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 70%;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            gap: 2rem;
+            z-index: 1;
+            position: relative;
         }
 
         /* Profile Picture */
         .profile-pic {
-            flex: 1;
             text-align: center;
+            max-width: 250px;
         }
         .profile-pic img {
-            width: 150px;
-            height: 150px;
+            width: 100%;
+            max-width: 200px;
+            height: auto;
             border-radius: 50%;
-            border: 4px solid #007acc;
+            border: 5px solid #007acc;
+            margin-bottom: 0.5rem;
         }
 
-        /* Bio and Interests */
-        .bio {
-            flex: 2;
-            padding: 1rem 2rem;
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #66ccff;
+            margin-bottom: 1rem;
         }
-        .bio h1 {
+
+        /* Icons Under Profile Picture */
+        .icons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: #66ccff;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .icon:hover {
+            color: #ffffff;
+            transform: scale(1.2);
+        }
+
+        .text-icon {
+            font-size: 1.2rem;
+            color: #66ccff;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .text-icon:hover {
+            color: #ffffff;
+            transform: scale(1.2);
+        }
+
+        /* Bio */
+        .bio-title {
+            text-align: left;
+            color: #66ccff;
+            font-size: 2rem;
             margin-top: 0;
-            color: #007acc;
         }
+
         .bio p {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+
+        /* Research Interests and Education */
+        .columns {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 2rem;
+        }
+        .interests, .education {
+            flex: 1;
+        }
+        .interests h3, .education h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            color: #66ccff;
+        }
+        .interests ul, .education ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.2rem;
+        }
+        .interests ul li, .education ul li {
             margin: 0.5rem 0;
         }
 
-        .interests {
-            margin-top: 1rem;
-        }
-        .interests h3 {
-            margin-bottom: 0.5rem;
-        }
-        .interests ul {
-            list-style: none;
-            padding: 0;
-        }
-        .interests ul li {
-            margin: 0.25rem 0;
+        /* Education Icon */
+        .education ul li::before {
+            content: "🎓 ";
+            margin-right: 0.5rem;
         }
 
         footer {
             text-align: center;
             margin: 2rem 0;
+            font-size: 1rem;
+            color: #cccccc;
         }
+
+/* News Section Styling */
+#news {
+    margin-top: 2rem;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.news-callout {
+    background: rgba(0, 51, 102, 0.8); /* Callout background color */
+    border-left: 5px solid #66ccff; /* Distinctive callout border */
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    position: relative;
+}
+
+.news-callout::before {
+    content: "📢"; /* Callout icon */
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #66ccff;
+}
+
+.news-date {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.news-text {
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
+        <a href="#home">Home</a>
         <a href="#news">News</a>
-        <a href="#cv">CV</a>
         <a href="#publications">Publications</a>
     </nav>
 
     <!-- Main Content -->
-    <div class="container">
-        <!-- Profile Picture -->
-        <div class="profile-pic">
-            <img src="your-photo.jpg" alt="Your Photo">
-        </div>
+    <div class="container" id="home">
+        <!-- Profile Picture and Bio Section -->
+        <div style="display: flex; gap: 3rem; align-items: flex-start; padding: 1rem;">
+            <!-- Profile Picture -->
+            <div class="profile-pic" style="padding: 1rem;">
+                <img src="image002.jpg" alt="Marian Temprana Alonso">
+                <div class="profile-name">Marian Temprana Alonso</div>
+                <div class="icons">
+                    <a href="cv.pdf" download class="text-icon" title="Download CV">
+                        <img src="cv-icon2.png" alt="CV" style="width: 32px; height: 32px;">
+                    </a>
+                    <a href="mailto:mtemp009@fiu.edu" title="Email Me" class="icon">
+                        <img src="email-icon-blue.png" alt="Email" style="width: 32px; height: 32px;">
+                    </a>
+                    <a href="https://github.com/mtemp009-2001" target="_blank" title="GitHub">
+                        <img src="github-icon.png" alt="GitHub" style="width: 32px; height: 32px;">
+                    </a>
+                    <a href="www.linkedin.com/in/marian-temprana-alonso-894241191" target="_blank" title="LinkedIn">
+                        <img src="linkedin-icon.png" alt="LinkedIn" style="width: 32px; height: 32px;">
+                    </a>
+                </div>
+            </div>
 
-        <!-- Bio and Interests -->
-        <div class="bio">
-            <h1>Your Name</h1>
-            <p>PhD Student | Researcher</p>
-            <p>Hello! I am a PhD student and researcher specializing in [Your Field]. My research focuses on [Key Topics].</p>
-            
-            <div class="interests">
-                <h3>Research Interests</h3>
-                <ul>
-                    <li>Interest 1</li>
-                    <li>Interest 2</li>
-                    <li>Interest 3</li>
-                </ul>
+            <!-- Bio Section -->
+            <div class="bio" style="flex: 2;">
+                <h1 class="bio-title">Bio</h1>
+                <p>
+                    Marian Temprana Alonso is a PhD student in the <span>Π</span>-CoLab group at the Knight 
+                    Foundation School of Computing and Information Sciences, Florida International University. 
+                    She is also a graduate research intern at Sandia National Laboratories. Marian earned her 
+                    BSc in Applied Mathematics from Florida International University in 2022, graduating with 
+                    distinction. Her research is centered on advancing energy-efficient communications, data 
+                    compression, and sensing, with a focus on developing innovative methodologies to address 
+                    complex challenges in these fields.
+                </p>
+
+                <!-- Research Interests and Education -->
+                <div class="columns">
+                    <!-- Research Interests -->
+                    <div class="interests">
+                        <h3>Research Interests</h3>
+                        <ul>
+                            <li>Information Theory</li>
+                            <li>Data Compression</li>
+                            <li>Wireless Communications</li>
+                            <li>Sensing</li>
+                            <li>Machine Learning</li>
+                        </ul>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="education">
+                        <h3>Education</h3>
+                        <ul>
+                            <li>PhD in Computer Science, Florida International University</li>
+                            <li>BSc in Applied Mathematics, Florida International University</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+
+    <!-- News Section -->
+    <section id="news">
+        <h1>News</h1>
+        <div class="news-list">
+
+        </div>
+    </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h1>Publications</h1>
+            <ul>
+                <li>M. Temprana Alonso, R. Guttromson, and J.E. Tabarez. "Causal Inference for Grid Failures During a HEMP." 2025
+                    under review for IEEE Power and Energy Society (PES) General Meeting (GM), 2025.</li>
+                <li>R. Guttromson, R. Schiek, R. Driesen, M. Temprana Alonso, T. Overbye, J. Snodgrass, A. Birchfield, M. Stevens, M.
+                    Briones, E. Nelson, A. Barnes, J. Tabarez, and C. Colson, “HEMP Transmission consequence model (HTCM): User
+                    manual,” Sandia National Laboratories, SAND2024-13709R, 2024.</li>
+                <li>R. Guttromson, R. Schiek, R. Driesen, M. Temprana Alonso, T. Overbye, J. Snodgrass, A. Birchfield, M. Stevens, M.
+                    Briones, E. Nelson, A. Barnes, J. Tabarez, and C. Colson, “HEMP transmission consequence model (HTCM): Technical
+                    report,” Sandia National Laboratories, SAND2024-13708R, 2024.</li>
+                <li>S. Srivastava, M. Temprana Alonso, N. Askar, U. Demirhan, F. Shirani, S. Rini, and A. Alkhateeb. 
+                    "Deep LearningBased Multi-Modal Sensor Fusion for CSI Compression in Wireless Networks." 2025 under review 
+                    for IEEE International Conference on Machine Learning for Communication and Networking (ICMLCN), 2025.</li>
+                <li>S. Srivastava, M. Temprana Alonso, R. Chatterjee, N. Askar, U. Demirhan, F. Shirani, S. Rini, and A. Alkhateeb. "Deep
+                    Learning for Multi-Modal Sensor Fusion and CSI Compression in Vehicular Communications." under review for IEEE
+                    IEEE Transactions on Vehicular Technology (TVT), 2025.</li>
+                <li>M. Temprana Alonso, F. Shirani, N. Irwin Bernardo, Y.C. Eldar "Non-Linear Analog Processing Gains in Task-Based
+                    Quantization." 2024 IEEE International Symposium on Information Theory (ISIT), 2024.</li>
+                <li>M. Temprana Alonso, X. Liu, H. Aghasi, and F. Shirani "Capacity Gains in MIMO Systems with Few-Bit ADCs Using
+                    Nonlinear Analog Circuits." 2025 under review for IEEE Transactions on Wireless Communications (TWC), 2025.</li>
+                <li>M. Temprana Alonso, F. Shirani, S.S. Iyengar "Optimal Fault-Tolerant Data Fusion in Sensor Networks: Fundamental
+                    Limits and Efficient Algorithms." 2023 IEEE Information Theory Workshop (ITW), 2023.</li>
+            </ul>
+        </section>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 Your Name. All rights reserved.</p>
+        <p>© 2024 Marian Temprana Alonso. All rights reserved.</p>
     </footer>
 </body>
 </html>
