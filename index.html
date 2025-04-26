@@ -304,9 +304,9 @@
     </div>
     
     <!-- Project Card for Project 2 -->
-    <div class="project-card" onclick="openModal(1)">
-      <img src="rl-overview.png" alt="Energy Efficient Communications" style="width:100%; height:200px; object-fit:contain; background:#ffffff; padding:10px; border-radius:8px;">
-      <h3>Energy Efficient Communications</h3>
+    <div class="project-card" onclick="openModal(2)">
+      <img src="nonlinearmimo.png" alt="Energy Efficient Communications" style="width:98%; height:200px; object-fit:contain; background:#ffffff; padding:10px; border-radius:8px;">
+      <h3>Energy Efficient MIMO Communications</h3>
     </div>
 
     <!-- Project Card for Project 3 -->
@@ -359,13 +359,15 @@
   </div>
 </div>
 
-<div id="modal-1" class="modal">
+<div id="modal-2" class="modal">
   <div class="modal-content" style="max-height: 80vh; overflow-y: auto; padding: 1rem;">
-    <span class="close-x" onclick="closeModal(1)">✖</span>
-    <h3>Deep Reinforcement Learning for MIMO Communication with Low-Resolution ADCs</h3>
-    <img src="rl-overview.png" alt="RL Overview Figure" style="width:100%; margin: 1rem 0; border-radius:8px;">
+    <span class="close-x" onclick="closeModal(2)">✖</span>
+    <h3>Energy Efficient Communications</h3>
+    <img src="nonlinearmimo.png" alt="RL Overview Figure" style="width:100%; margin: 1rem 0; border-radius:8px;">
     <p style="text-align: justify;">
-      Multiple-input multiple-output (MIMO) wireless systems conventionally use high-resolution analog-to-digital converters (ADCs) at the receiver side to faithfully digitize received signals prior to digital signal processing. However, the power consumption of high-resolution ADCs increases significantly as the bandwidth is increased, particularly in millimeter wave communications systems. A combination of two mitigating approaches has been considered in the literature: i) to use hybrid beamforming to reduce the number of ADCs, and ii) to use low-resolution ADCs to reduce per ADC power consumption. Lowering the number and resolution of the ADCs naturally reduces the communication rate of the system, leading to a tradeoff between ADC power consumption and communication rate. Prior works have shown that optimizing over the hybrid beamforming matrix and ADC thresholds may reduce the aforementioned rate-loss significantly. A key challenge is the complexity of optimization over all choices of beamforming matrices and threshold vectors. This work proposes a reinforcement learning (RL) architecture to perform the optimization. The proposed approach integrates deep neural network-based mutual information estimators for reward calculation with policy gradient methods for reinforcement learning. The approach is robust to dynamic channel statistics and noisy CSI estimates. It is shown theoretically that greedy RL methods converge to the globally optimal policy. Extensive empirical evaluations are provided demonstrating that the performance of the proposed RL-based approach closely matches exhaustive search optimization across the solution space.
+      Analog to digital converters (ADCs) are a major contributor to the power consumption of multiple-input multiple-output (MIMO) receivers in large bandwidth millimeter-wave systems. Prior works have considered two mitigating solutions to reduce the ADC power consumption: i) decreasing the number of ADCs via analog and hybrid beamforming, and ii) decreasing the ADC resolution, i.e., utilizing one-bit and few-bit ADCs.
+      These mitigating solutions lead to performance loss in terms of achievable rates due to increased quantization error. In this work, the use of nonlinear analog operators such as envelope detectors and polynomial operators, prior to sampling and quantization is considered, as a way to reduce the aforementioned rate-loss. The receiver architecture consists of linear combiners, nonlinear analog operators, and few-bit ADCs.
+      The fundamental performance limits of the resulting communication system, in terms of achievable rates,  are investigated under various assumptions on the set of implementable analog operators. Extensive numerical evaluations are provided to evaluate the set of achievable rates and the power consumption of the proposed receiver architectures. Circuit simulations and measurement results, based on both 22 nm FDSOI CMOS technology and 65 nm Bulk CMOS transistor technologies, are provided to justify the power efficiency of the proposed receiver architectures.
     </p>
   </div>
 </div>
