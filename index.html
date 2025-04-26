@@ -311,20 +311,20 @@
 
     <!-- Project Card for Project 3 -->
     <div class="project-card" onclick="openModal(3)">
-      <img src="task-based.png" alt="Deep-RL for MIMO Communications" style="width:100%; height:200px; object-fit:contain; background:#ffffff; padding:10px; border-radius:8px;">
+      <img src="task-based.png" alt="Deep-RL for MIMO Communications" style="width:98%; height:200px; object-fit:contain; background:#ffffff; padding:10px; border-radius:8px;">
       <h3>Energy Efficient Compression</h3>
     </div>
 
     <!-- Project Card for Project 4 -->
-    <div class="project-card" onclick="openModal(1)">
-      <img src="sensor.png" alt="Deep-RL for MIMO Communications" style="width:100%; height:200px; object-fit:contain; background:#ffffff; padding:10px; border-radius:8px;">
-      <h3>Deep-RL for MIMO Communications</h3>
+    <div class="project-card" onclick="openModal(4)">
+      <img src="sensor.png" alt="Deep-RL for MIMO Communications" style="width:98%; height:200px; object-fit:contain; background:#ffffff; padding:10px; border-radius:8px;">
+      <h3>Accuracy and Consensus-Based Sensor Fusion</h3>
     </div>
 
     <!-- Project Card for Project 5 -->
-    <div class="project-card" onclick="openModal(1)">
-      <img src="cars.png" alt="Deep-RL for MIMO Communications" style="width:100%; height:200px; object-fit:contain; background:#ffffff; padding:10px; border-radius:8px;">
-      <h3>Deep-RL for MIMO Communications</h3>
+    <div class="project-card" onclick="openModal(5)">
+      <img src="cars.png" alt="Deep-RL for MIMO Communications" style="width:98%; height:200px; object-fit:contain; background:#ffffff; padding:10px; border-radius:8px;">
+      <h3>CSI Estimation with Multi-Modal Side-Information</h3>
     </div>
 
   </div>
@@ -362,7 +362,7 @@
 <div id="modal-2" class="modal">
   <div class="modal-content" style="max-height: 80vh; overflow-y: auto; padding: 1rem;">
     <span class="close-x" onclick="closeModal(2)">✖</span>
-    <h3>Energy Efficient Communications</h3>
+    <h3>Non-Linear Analog Processing in MIMO Systems with Coarse Quantization</h3>
     <img src="nonlinearmimo.png" alt="RL Overview Figure" style="width:100%; margin: 1rem 0; border-radius:8px;">
     <p style="text-align: justify;">
       Analog to digital converters (ADCs) are a major contributor to the power consumption of multiple-input multiple-output (MIMO) receivers in large bandwidth millimeter-wave systems. Prior works have considered two mitigating solutions to reduce the ADC power consumption: i) decreasing the number of ADCs via analog and hybrid beamforming, and ii) decreasing the ADC resolution, i.e., utilizing one-bit and few-bit ADCs.
@@ -383,6 +383,27 @@
        It is shown that analog processing can significantly reduce the distortion in task reconstruction. Numerical simulations in a Gaussian example are provided to give further insights into the aforementioned analog processing gains. 
     </p>
   </div>
+</div>
+
+<div id="modal-4" class="modal">
+  <div class="modal-content" style="max-height: 80vh; overflow-y: auto; padding: 1rem;">
+    <span class="close-x" onclick="closeModal(4)">✖</span>
+    <h3>Optimal Fault-Tolerant Data Fusion in Sensor Networks: Fundamental Limits and Efficient Algorithms</h3>
+    <img src="sensor.png" alt="RL Overview Figure" style="width:100%; margin: 1rem 0; border-radius:8px;">
+    <p style="text-align: justify;">
+       Distributed estimation in the context of sensor networks is considered, where distributed agents are given a set of sensor measurements, and are tasked with estimating a target variable. 
+      A subset of sensors are assumed to be faulty. The objective is to minimize i) the mean squared estimation error at each node (accuracy objective), and ii) the mean squared distance between the estimates at each pair of nodes (consensus objective). It is shown that there is an inherent tradeoff between the former and latter objectives. Assuming a general stochastic model, the sensor fusion algorithm optimizing this tradeoff is characterized through a computable optimization problem, and a Cramér-Rao type lower bound for the achievable accuracy-consensus loss is obtained. Finding the optimal sensor fusion algorithm is computationally complex. To address this, a general class of low-complexity Brooks-Iyengar  Algorithms  are introduced, and their performance, in terms of accuracy and consensus objectives, is compared to that of optimal linear estimators through case study simulations of various scenarios.    </p>
+  </div>
+</div>
+
+<div id="modal-5" class="modal">
+  <div class="modal-content" style="max-height: 80vh; overflow-y: auto; padding: 1rem;">
+    <span class="close-x" onclick="closeModal(5)">✖</span>
+    <h3>Deep Learning for Multi-Modal Sensor Fusion and CSI Compression in Vehicular Communications</h3>
+    <img src="cars.png" alt="RL Overview Figure" style="width:100%; margin: 1rem 0; border-radius:8px;">
+    <p style="text-align: justify;">
+       Vehicle-to-infrastructure (V2I) communications requires accurate channel state information (CSI) estimation with strict latency constraints, which is  challenging in dynamic vehicular environments. This paper introduces a novel multi-modal fusion framework that leverages radar, camera, and GPS data to enhance CSI compression in V2I networks. We design a distributed deep learning architecture comprising an encoder at the vehicle, a sensor fusion network at the base station (BS), and a decoder that jointly optimizes CSI reconstruction under rate-limited feedback constraints.
+Our key innovations include: (1) systematic integration of three complementary sensing modalities, quantifying their individual and combined contributions; (2) a temporal correlation model that leverages both multi-modal data and historical CSI estimates; and (3) a comprehensive evaluation framework using our newly introduced DeepVerse 6G dataset. Extensive experiments demonstrate significant performance improvements, e.g., GPS data alone enhances CSI estimates by 67\% in static scenarios and 69\% in dynamic scenarios compared to conventional approaches. Our analysis across varying traffic densities provides valuable design guidelines for practical deployment in diverse vehicular environments.  </div>
 </div>
 
 <!-- Updates Sidebar -->
