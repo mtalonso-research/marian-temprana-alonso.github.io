@@ -16,7 +16,7 @@
     nav a {
       margin-right: 1em;
       text-decoration: none;
-      color: white; /* white nav tabs */
+      color: white;
     }
     nav a:hover {
       text-decoration: underline;
@@ -31,7 +31,7 @@
     }
 
     .research ul {
-      list-style-type: none; /* remove bullets for top-level */
+      list-style-type: none;
       padding-left: 0;
     }
 
@@ -45,10 +45,11 @@
       font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 0.4em;
+      cursor: pointer; /* make clickable */
     }
 
     .project-header i {
-      font-size: 2.5rem; /* larger icons */
+      font-size: 2.5rem;
       margin-right: 0.6em;
       color: #333;
       flex-shrink: 0;
@@ -58,9 +59,8 @@
       list-style-type: disc;
       margin-left: 2em;
     }
-
     .details li {
-      margin-bottom: 0.3em; /* tighter spacing between bullets */
+      margin-bottom: 0.3em;
       line-height: 1.4;
     }
 
@@ -77,12 +77,36 @@
       text-decoration: underline;
     }
 
-    .contact-info a {
-      color: inherit;
-      text-decoration: none;
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
     }
-    .contact-info a:hover {
-      text-decoration: underline;
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 70%;
+      max-width: 700px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: black;
     }
   </style>
 </head>
@@ -102,72 +126,50 @@
   <!-- Research Section -->
   <section class="section research">
     <p class="section-title">Research Projects</p>
-        <div class="project-header">
-          <i class="fas fa-car"></i>
-          Temporal Knowledge Graphs for Reasoning and Prediction in Traffic Scenes
-          <span class="tag-link">[<a href="https://github.com/mtalonso-research/Traffic_Semantic_Graphs">Git</a>]</span>
-        </div>
-        <ul class="details">
-          <li>Collaboration with National Yang Ming Chiao Tung University and IIT Kanpur.</li>
-          <li>Built a pipeline combining YOLO-based object detection and MiDas depth perception, overlaying depth heatmaps on traffic frames.</li>
-          <li>Leveraged LLMs to generate propositional logic statements and encode temporal knowledge graphs.</li>
-          <li>Integrated these into a Graph Neural Network (GNN) for prediction and analysis in autonomous driving.</li>
-        </ul>
 
-        <div class="project-header">
-          <i class="fas fa-robot"></i>
-          Reinforcement Learning-Based Optimization for Quantization
-          <span class="tag-link">[<a href="https://arxiv.org/abs/2504.18957">Arxiv</a>][<a href="https://github.com/mtalonso-research/RL_MIMO">Git</a>]</span>
-        </div>
-        <ul class="details">
-          <li>Designed an RL framework to approximate optimal quantization configurations.</li>
-          <li>Extended the CORTICAL algorithm for mutual information approximation and maximization in discrete settings.</li>
-          <li>Validated the framework with simulations in wireless communications and task-based quantization.</li>
-        </ul>
+    <!-- Example project with modal -->
+    <div class="project-header" data-modal="modal1">
+      <i class="fas fa-car"></i>
+      <span>Temporal Knowledge Graphs for Reasoning and Prediction in Traffic Scenes</span>
+      <span class="tag-link">[<a href="https://github.com/mtalonso-research/Traffic_Semantic_Graphs">Git</a>]</span>
+    </div>
+    <ul class="details">
+      <li>Collaboration with National Yang Ming Chiao Tung University and IIT Kanpur.</li>
+      <li>Built a pipeline combining YOLO-based object detection and MiDas depth perception, overlaying depth heatmaps on traffic frames.</li>
+      <li>Leveraged LLMs to generate propositional logic statements and encode temporal knowledge graphs.</li>
+      <li>Integrated these into a Graph Neural Network (GNN) for prediction and analysis in autonomous driving.</li>
+    </ul>
 
-        <div class="project-header">
-          <i class="fas fa-satellite-dish"></i>
-          Deep Learning-Driven Multi-Modal Sensor Fusion for CSI Compression
-          <span class="tag-link">[<a href="https://ieeexplore.ieee.org/document/11139918">ICMLCN</a>][<a href="https://ieeexplore.ieee.org/document/11080339">TVT</a>][<a href="https://github.com/mtalonso-research/DeepSense-6G-V2I-CSI-Compression">Git</a>]</span>
-        </div>
-        <ul class="details">
-          <li>Collaboration with NYCU, IIT Kanpur, and Arizona State University.</li>
-          <li>Proposed a system model for CSI estimation using multi-modal side information at the base station.</li>
-          <li>Evaluated estimation accuracy under different modalities and compression rates using deep neural networks.</li>
-        </ul>
+    <!-- Placeholder modal -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="close" data-close="modal1">&times;</span>
+        <h2>Temporal Knowledge Graphs</h2>
+        <p>Placeholder content for this project. Replace this text with detailed explanation, images, or figures.</p>
+      </div>
+    </div>
 
-        <div class="project-header">
-          <i class="fas fa-wave-square"></i>
-          Task-Based Quantization with Nonlinear Analog Processing
-          <span class="tag-link">[<a href="https://arxiv.org/abs/2402.01525">Arxiv</a>][<a href="https://ieeexplore.ieee.org/document/10619674">ISIT</a>]</span>
-        </div>
-        <ul class="details">
-          <li>Collaboration with the Weizmann Institute of Science and University of Melbourne.</li>
-          <li>Investigated task-based quantization where the task differs from the observed measurements.</li>
-          <li>Demonstrated that nonlinear analog processing reduces distortion and improves rate-distortion performance.</li>
-        </ul>
+    <!-- Copy this structure for each project -->
+    <div class="project-header" data-modal="modal2">
+      <i class="fas fa-robot"></i>
+      <span>Reinforcement Learning-Based Optimization for Quantization</span>
+      <span class="tag-link">[<a href="https://arxiv.org/abs/2504.18957">Arxiv</a>] [<a href="https://github.com/mtalonso-research/RL_MIMO">Git</a>]</span>
+    </div>
+    <ul class="details">
+      <li>Designed an RL framework to approximate optimal quantization configurations.</li>
+      <li>Extended the CORTICAL algorithm for mutual information approximation and maximization in discrete settings.</li>
+      <li>Validated the framework with simulations in wireless communications and task-based quantization.</li>
+    </ul>
 
-        <div class="project-header">
-          <i class="fas fa-broadcast-tower"></i>
-          Energy-Efficient Wireless Communication Using Low-Resolution ADCs
-          <span class="tag-link">[<a href="https://arxiv.org/abs/2212.05948">Arxiv</a>]</span>
-        </div>
-        <ul class="details">
-          <li>Collaboration with University of California, Irvine.</li>
-          <li>Analyzed MIMO communication rates under low-resolution ADCs for energy efficiency.</li>
-          <li>Justified incorporating nonlinear operators via theoretical and numerical analysis, showing rate and efficiency gains.</li>
-        </ul>
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <span class="close" data-close="modal2">&times;</span>
+        <h2>Reinforcement Learning-Based Optimization</h2>
+        <p>Placeholder for detailed description. You can add figures, math, or links here.</p>
+      </div>
+    </div>
 
-        <div class="project-header">
-          <i class="fas fa-project-diagram"></i>
-          Consensus-Based Sensor Fusion
-          <span class="tag-link">[<a href="https://arxiv.org/abs/2210.04156">Arxiv</a>][<a href="https://ieeexplore.ieee.org/document/10161681">ITW</a>]</span>
-        </div>
-        <ul class="details">
-          <li>Studied tradeoffs between accuracy and consensus in distributed estimation.</li>
-          <li>Decomposed the fusion function into orthonormal basis components in Hilbert space.</li>
-          <li>Formulated optimization problems for optimal fusion algorithms.</li>
-        </ul>
+    <!-- Repeat the same pattern for other projects... -->
 
   </section>
 
@@ -187,6 +189,32 @@
 <footer>
   <p>© 2025 Marian Temprana Alonso. All rights reserved.</p>
 </footer>
+
+<!-- Modal Script -->
+<script>
+  // Open modal
+  document.querySelectorAll('.project-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const modalId = header.getAttribute('data-modal');
+      document.getElementById(modalId).style.display = 'block';
+    });
+  });
+
+  // Close modal
+  document.querySelectorAll('.close').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modalId = btn.getAttribute('data-close');
+      document.getElementById(modalId).style.display = 'none';
+    });
+  });
+
+  // Close if clicking outside modal
+  window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+      event.target.style.display = "none";
+    }
+  }
+</script>
 
 </body>
 </html>
