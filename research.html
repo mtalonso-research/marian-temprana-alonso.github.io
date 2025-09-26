@@ -34,24 +34,34 @@
       list-style-type: none;
       padding-left: 0;
     }
+
     .research li {
-      margin-bottom: 1.5em;
-      line-height: 1.5;
-    }
-    .research li strong {
-      display: inline-block;
-      margin-bottom: 0.25em;
+      margin-bottom: 2em;
     }
 
-    .research .details {
+    .project-header {
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    .project-header i {
+      font-size: 1.4rem;
+      margin-right: 0.5em;
+      color: #333;
+    }
+
+    .details {
       list-style-type: disc;
       margin-left: 2em;
-      margin-top: 0.5em;
     }
 
     .tag-link {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       margin-left: 0.5em;
+      font-weight: normal;
     }
     .tag-link a {
       text-decoration: none;
@@ -89,9 +99,11 @@
     <ul>
 
       <li>
-        <i class="fas fa-car"></i>
-        <strong>Temporal Knowledge Graphs for Reasoning and Prediction in Traffic Scenes</strong>
-        <span class="tag-link">[<a href="#">C1</a>]</span>
+        <div class="project-header">
+          <i class="fas fa-car"></i>
+          Temporal Knowledge Graphs for Reasoning and Prediction in Traffic Scenes
+          <span class="tag-link">[<a href="#">C1</a>]</span>
+        </div>
         <ul class="details">
           <li>Collaboration with National Yang Ming Chiao Tung University and IIT Kanpur.</li>
           <li>Built a pipeline combining YOLO-based object detection and MiDas depth perception, overlaying depth heatmaps on traffic frames.</li>
@@ -101,9 +113,11 @@
       </li>
 
       <li>
-        <i class="fas fa-robot"></i>
-        <strong>Reinforcement Learning-Based Optimization for Quantization</strong>
-        <span class="tag-link">[<a href="#">J1</a>]</span>
+        <div class="project-header">
+          <i class="fas fa-robot"></i>
+          Reinforcement Learning-Based Optimization for Quantization
+          <span class="tag-link">[<a href="#">J1</a>]</span>
+        </div>
         <ul class="details">
           <li>Designed an RL framework to approximate optimal quantization configurations.</li>
           <li>Extended the CORTICAL algorithm for mutual information approximation and maximization in discrete settings.</li>
@@ -112,9 +126,11 @@
       </li>
 
       <li>
-        <i class="fas fa-satellite-dish"></i>
-        <strong>Deep Learning-Driven Multi-Modal Sensor Fusion for CSI Compression</strong>
-        <span class="tag-link">[<a href="#">C2</a>]</span>
+        <div class="project-header">
+          <i class="fas fa-satellite-dish"></i>
+          Deep Learning-Driven Multi-Modal Sensor Fusion for CSI Compression
+          <span class="tag-link">[<a href="#">C2</a>]</span>
+        </div>
         <ul class="details">
           <li>Collaboration with NYCU, IIT Kanpur, and Arizona State University.</li>
           <li>Proposed a system model for CSI estimation using multi-modal side information at the base station.</li>
@@ -123,9 +139,11 @@
       </li>
 
       <li>
-        <i class="fas fa-wave-square"></i>
-        <strong>Task-Based Quantization with Nonlinear Analog Processing</strong>
-        <span class="tag-link">[<a href="#">J2</a>]</span>
+        <div class="project-header">
+          <i class="fas fa-wave-square"></i>
+          Task-Based Quantization with Nonlinear Analog Processing
+          <span class="tag-link">[<a href="#">J2</a>]</span>
+        </div>
         <ul class="details">
           <li>Collaboration with the Weizmann Institute of Science and University of Melbourne.</li>
           <li>Investigated task-based quantization where the task differs from the observed measurements.</li>
@@ -134,9 +152,11 @@
       </li>
 
       <li>
-        <i class="fas fa-broadcast-tower"></i>
-        <strong>Energy-Efficient Wireless Communication Using Low-Resolution ADCs</strong>
-        <span class="tag-link">[<a href="#">Git</a>]</span>
+        <div class="project-header">
+          <i class="fas fa-broadcast-tower"></i>
+          Energy-Efficient Wireless Communication Using Low-Resolution ADCs
+          <span class="tag-link">[<a href="#">Git</a>]</span>
+        </div>
         <ul class="details">
           <li>Collaboration with University of California, Irvine.</li>
           <li>Analyzed MIMO communication rates under low-resolution ADCs for energy efficiency.</li>
@@ -145,9 +165,11 @@
       </li>
 
       <li>
-        <i class="fas fa-project-diagram"></i>
-        <strong>Consensus-Based Sensor Fusion</strong>
-        <span class="tag-link">[<a href="#">C3</a>]</span>
+        <div class="project-header">
+          <i class="fas fa-project-diagram"></i>
+          Consensus-Based Sensor Fusion
+          <span class="tag-link">[<a href="#">C3</a>]</span>
+        </div>
         <ul class="details">
           <li>Studied tradeoffs between accuracy and consensus in distributed estimation.</li>
           <li>Decomposed the fusion function into orthonormal basis components in Hilbert space.</li>
