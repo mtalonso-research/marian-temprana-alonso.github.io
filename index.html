@@ -15,6 +15,20 @@
       margin-top: 1em;
       margin-bottom: 0.5em;
     }
+
+    .profile-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .profile-pic {
+      flex: 0 0 auto;
+    }
+
+    .profile-info {
+      flex: 1 1 0;
+    }
   </style>
 </head>
 
@@ -30,29 +44,33 @@
 
 <div class="container">
 
-  <!-- Headshot, Name, Icons, Bio, Honors (all in same box) -->
+  <!-- Unified Section Box -->
   <section class="section home" id="home">
-    <div class="profile-pic">
-      <img src="head_shot.png" alt="Marian Temprana Alonso" />
-    </div>
-    <div class="profile-info">
-      <h1>Marian Temprana Alonso</h1>
-      <div class="icons">
-        <a href="cv.pdf" download title="Download CV"><i class="fas fa-file-alt"></i></a>
-        <a href="mailto:mtemp009@fiu.edu" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/mtalonso-research" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/marian-temprana-alonso-894241191" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      </div>
 
-      <div class="bio">
-        <p class="section-title">Bio</p>
-        <p>
-          Marian Temprana Alonso is a Ph.D. candidate at the Security, Optimization, and Learning for InterDependent networks laboratory (solid lab), Knight Foundation School of Computing and Information Sciences at Florida International University, working under the supervision of Dr. M. Hadi Amini. Her research interests include information theory, signal processing, and machine learning, with a focus on energy-efficient compression, communications, and sensing. She earned her B.Sc. in Applied Mathematics from Florida International University in 2022. Throughout her Ph.D., she has contributed to projects on energy-efficient task-based quantization, wireless communications with nonlinear analog processing, accuracy and consensus-based sensor fusion, and deep learning-driven multi-modal sensor fusion for CSI compression, leading to publications in IEEE conferences such as ISIT and ITW. She has received several prestigious recognitions during her Ph.D. Her achievements include receiving a Graduate Assistance in Areas of National Need (GAANN) Fellowship and being part of the winning team for the ISIT 2023 DeepVerse 6G Machine Learning Challenge. She contributed as a research intern at Sandia National Laboratories, where she worked on advancing methodologies for power grid resilience.
-        </p>
+    <!-- Headshot + Bio side by side -->
+    <div class="profile-wrapper">
+      <div class="profile-pic">
+        <img src="head_shot.png" alt="Marian Temprana Alonso" />
+      </div>
+      <div class="profile-info">
+        <h1>Marian Temprana Alonso</h1>
+        <div class="icons">
+          <a href="cv.pdf" download title="Download CV"><i class="fas fa-file-alt"></i></a>
+          <a href="mailto:mtemp009@fiu.edu" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/mtalonso-research" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/marian-temprana-alonso-894241191" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <div class="bio">
+          <p class="section-title">Bio</p>
+          <p>
+            Marian Temprana Alonso is a Ph.D. candidate at the Security, Optimization, and Learning for InterDependent networks laboratory (solid lab), Knight Foundation School of Computing and Information Sciences at Florida International University, working under the supervision of Dr. M. Hadi Amini. Her research interests include information theory, signal processing, and machine learning, with a focus on energy-efficient compression, communications, and sensing. She earned her B.Sc. in Applied Mathematics from Florida International University in 2022. Throughout her Ph.D., she has contributed to projects on energy-efficient task-based quantization, wireless communications with nonlinear analog processing, accuracy and consensus-based sensor fusion, and deep learning-driven multi-modal sensor fusion for CSI compression, leading to publications in IEEE conferences such as ISIT and ITW. She has received several prestigious recognitions during her Ph.D. Her achievements include receiving a Graduate Assistance in Areas of National Need (GAANN) Fellowship and being part of the winning team for the ISIT 2023 DeepVerse 6G Machine Learning Challenge. She contributed as a research intern at Sandia National Laboratories, where she worked on advancing methodologies for power grid resilience.
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- Honors directly below profile-info and inside same section -->
+    <!-- Honors: now truly underneath -->
     <div class="honors">
       <p class="section-title">Selected Honors & Awards</p>
       <ul>
@@ -62,6 +80,7 @@
         <li>Proposal Defense – Ph.D. Candidacy, FIU (2025)</li>
       </ul>
     </div>
+
   </section>
 
 </div>
