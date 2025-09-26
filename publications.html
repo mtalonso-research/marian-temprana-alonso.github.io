@@ -12,14 +12,17 @@
       font-family: 'Open Sans', sans-serif;
       color: black;
     }
+
+    /* Navigation links */
     nav a {
       margin-right: 1em;
       text-decoration: none;
-      color: black;
+      color: #0056b3; /* tab color */
     }
     nav a:hover {
       text-decoration: underline;
     }
+
     .section-title {
       font-weight: bold;
       font-size: 1.15rem;
@@ -32,15 +35,18 @@
       padding-left: 0;
     }
     .publications li {
-      margin-bottom: 1em;
+      margin-bottom: 1.5em; /* extra spacing between items */
       line-height: 1.4;
     }
-    /* Global link styling */
-    a {
-      color: inherit;
+
+    /* Black links only in publications and contact sections */
+    .publications a,
+    .contact-info a {
+      color: black;
       text-decoration: none;
     }
-    a:hover {
+    .publications a:hover,
+    .contact-info a:hover {
       text-decoration: underline;
     }
   </style>
