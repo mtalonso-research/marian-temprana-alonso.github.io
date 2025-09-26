@@ -31,7 +31,7 @@
     }
 
     .research ul {
-      list-style-type: none;
+      list-style-type: none; /* remove bullets for top-level */
       padding-left: 0;
     }
 
@@ -42,20 +42,26 @@
     .project-header {
       display: flex;
       align-items: center;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: bold;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.4em;
     }
 
     .project-header i {
-      font-size: 1.4rem;
-      margin-right: 0.5em;
+      font-size: 1.8rem; /* larger icons */
+      margin-right: 0.6em;
       color: #333;
+      flex-shrink: 0;
     }
 
     .details {
       list-style-type: disc;
       margin-left: 2em;
+    }
+
+    .details li {
+      margin-bottom: 0.3em; /* tighter spacing between bullets */
+      line-height: 1.4;
     }
 
     .tag-link {
