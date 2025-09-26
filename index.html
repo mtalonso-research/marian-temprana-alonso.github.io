@@ -3,150 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Marian Temprana Alonso</title>
+  <title>Marian Temprana Alonso - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
+    :root {
+      --accent-color: #1e5e49;
+      --background-color: #fdfdfc;
+      --text-main: #333333;
+      --text-light: #111111;
+    }
     body {
       margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #fdfdfb;
-      color: #222;
-    }
-
-    nav {
-      background-color: #1c2b1c;
-      padding: 15px 30px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
       padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: var(--background-color);
+      background-image: url('https://www.transparenttextures.com/patterns/little-pluses.png');
+      background-repeat: repeat;
+      color: var(--text-main);
     }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    nav ul li a.active {
-      text-decoration: underline;
-    }
-
-    .container {
+    nav {
+      background: #0d130f;
       display: flex;
       justify-content: center;
-      padding: 60px 30px;
+      align-items: center;
+      gap: 2rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-
-    .profile {
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent-color);
+    }
+    .container {
+      width: 85%;
+      max-width: 1200px;
+      margin: 3rem auto;
       display: flex;
-      flex-direction: row;
-      gap: 40px;
-      max-width: 1000px;
+      flex-direction: column;
+      gap: 3rem;
     }
-
-    .profile img {
-      width: 180px;
-      height: 180px;
-      border-radius: 10px;
+    .section {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+    h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+    .home {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .profile-pic img {
+      width: 250px;
+      height: 300px;
       object-fit: cover;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      border: 4px solid var(--accent-color);
     }
-
-    .info {
+    .profile-info {
       flex: 1;
     }
-
-    .info h1 {
+    .profile-info h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 2.5rem;
       margin: 0;
-      font-size: 28px;
+      color: var(--text-light);
     }
-
-    .contact-icons {
-      margin: 10px 0 20px;
-      font-size: 20px;
+    .icons {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1.5rem;
     }
-
-    .contact-icons a {
-      margin-right: 15px;
+    .icons a {
+      color: var(--accent-color);
+      font-size: 1.8rem;
+      transition: transform 0.3s, color 0.3s;
       text-decoration: none;
-      color: #1c2b1c;
     }
-
+    .icons a:hover {
+      transform: scale(1.2);
+      color: var(--text-light);
+    }
     .bio {
-      line-height: 1.5;
-      margin-bottom: 25px;
+      margin-top: 1rem;
+      text-align: justify;
     }
-
-    .awards h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
+    .honors {
+      margin-top: 2rem;
     }
-
-    .awards ul {
-      margin: 0;
-      padding-left: 20px;
+    ul {
+      list-style: none;
+      padding: 0;
     }
-
-    .awards ul li {
-      margin-bottom: 6px;
+    ul li {
+      margin-bottom: 0.7rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    ul li::before {
+      content: "•";
+      color: var(--accent-color);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      color: #999;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="other.html">Research</a></li>
-      <li><a href="other.html">Publications</a></li>
-      <li><a href="other.html">Updates</a></li>
-    </ul>
-  </nav>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="other.html">Research & More</a>
+</nav>
 
-  <!-- Main Content -->
-  <div class="container">
-    <div class="profile">
-      <!-- Profile Photo -->
-      <img src="your-photo.jpg" alt="Profile Photo" />
+<div class="container">
 
-      <!-- Right Column -->
-      <div class="info">
-        <h1>Marian Temprana Alonso</h1>
-
-        <!-- Contact Icons -->
-        <div class="contact-icons">
-          <a href="mailto:your@email.com" title="Email">✉️</a>
-          <a href="link-to-cv.pdf" title="CV">📄</a>
-          <a href="https://github.com/yourprofile" target="_blank" title="GitHub">🐙</a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">🔗</a>
-        </div>
-
-        <!-- Short Bio -->
-        <p class="bio">
-          Marian Temprana Alonso is a Ph.D. candidate in the Knight Foundation School of Computing and Information Sciences at Florida International University. Her research lies at the intersection of information theory, wireless communications, data compression, and learning. She is part of the Π-CoLab group and has contributed to both theoretical and applied work in sensing and transmission.
+  <!-- Headshot, Name, Icons -->
+  <section class="section home" id="home">
+    <div class="profile-pic">
+      <img src="head_shot.png" alt="Marian Temprana Alonso" />
+    </div>
+    <div class="profile-info">
+      <h1>Marian Temprana Alonso</h1>
+      <div class="icons">
+        <a href="cv.pdf" download title="Download CV"><i class="fas fa-file-alt"></i></a>
+        <a href="mailto:mtemp009@fiu.edu" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/mtalonso-research" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/marian-temprana-alonso-894241191" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="bio">
+        <p>
+          Marian Temprana Alonso is a Ph.D. candidate in the Knight Foundation School of Computing and Information Sciences at Florida International University and a member of the Π-CoLab research group under the supervision of Dr. Farhad Shirani. Her research interests include information theory, signal processing, and machine learning, with a focus in energy-efficient compression, communications, and sensing. She earned her B.Sc. in Applied Mathematics from FIU in 2022. She has contributed to work in quantization, analog processing, sensor fusion, and CSI compression, with publications in ISIT and ITW. She is a GAANN Fellow and a winner of the ISIT 2023 DeepVerse Challenge. Marian is also a research intern at Sandia National Laboratories.
         </p>
-
-        <!-- Honors & Awards -->
-        <div class="awards">
-          <h2>Selected Honors & Awards</h2>
-          <ul>
-            <li>GAANN Fellowship – U.S. Department of Education</li>
-            <li>ISIT 2023 DeepVerse Challenge – Winning Team</li>
-            <li>Research Internship – Sandia National Laboratories</li>
-            <li>FIU Computer Science Outstanding Graduate Student</li>
-            <!-- Add more as needed -->
-          </ul>
-        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Honors & Awards -->
+  <section class="section honors">
+    <h2>Selected Honors & Awards</h2>
+    <ul>
+      <li>GAANN Fellowship – U.S. Department of Education</li>
+      <li>Winner – ISIT 2023 DeepVerse 6G Machine Learning Challenge</li>
+      <li>Research Internship – Sandia National Laboratories (2023–2025)</li>
+      <li>Proposal Defense – Ph.D. Candidacy, FIU (2025)</li>
+      <li>Invited Presenter – IEEE ISIT 2024, ITW 2023, ICMLCN 2025</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2025 Marian Temprana Alonso. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
